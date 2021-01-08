@@ -1,0 +1,48 @@
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.exe.config
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.exe
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.pdb
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csprojAssemblyReference.cache
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\MainWindow.g.cs
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\App.g.cs
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App_MarkupCompile.cache
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App_MarkupCompile.lref
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\MainWindow.baml
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.g.resources
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation_Drawer_App.Properties.Resources.resources
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csproj.GenerateResource.cache
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.exe
+C:\Users\Arun Enterprises Co\source\repos\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.pdb
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.exe.config
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.exe
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.pdb
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csprojAssemblyReference.cache
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\MainWindow.g.cs
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\App.g.cs
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App_MarkupCompile.cache
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App_MarkupCompile.lref
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\MainWindow.baml
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.g.resources
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation_Drawer_App.Properties.Resources.resources
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csproj.GenerateResource.cache
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.exe
+C:\Users\Arun Enterprises Co\Desktop\Navigation Drawer App - YouTube Upload Contents\Source Code\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.exe.config
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.exe
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Navigation Drawer App.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csprojAssemblyReference.cache
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\MainWindow.g.cs
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\App.g.cs
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App_MarkupCompile.cache
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App_MarkupCompile.lref
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\MainWindow.baml
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.g.resources
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation_Drawer_App.Properties.Resources.resources
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csproj.GenerateResource.cache
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csproj.CoreCompileInputs.cache
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.exe
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Highcharts.dll
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Newtonsoft.Json.dll
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Newtonsoft.Json.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\bin\Debug\Newtonsoft.Json.xml
+E:\Semester_9\PFE_Trading Analyse Strategy\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation-Drawer-Sidebar-Menu-in-WPF-master\Navigation Drawer App\Navigation Drawer App\obj\Debug\Navigation Drawer App.csproj.CopyComplete
