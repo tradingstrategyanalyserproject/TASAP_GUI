@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Blend for Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASAP_GUI", "Navigation Drawer App\TASAP_GUI.csproj", "{8FA00EFF-CC13-40E6-A3CB-19E54E8435EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASAP_GUI", "TASAP_GUI\TASAP_GUI.csproj", "{8FA00EFF-CC13-40E6-A3CB-19E54E8435EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

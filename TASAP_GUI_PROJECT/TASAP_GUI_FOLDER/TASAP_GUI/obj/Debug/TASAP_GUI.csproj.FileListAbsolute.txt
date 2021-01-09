@@ -37,3 +37,23 @@ E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.CopyComplete
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.exe
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.pdb
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Navigation Drawer App.exe.config
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Navigation Drawer App.exe
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Navigation Drawer App.pdb
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Highcharts.dll
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csprojAssemblyReference.cache
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\MainWindow.g.cs
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\App.g.cs
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App_MarkupCompile.cache
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App_MarkupCompile.lref
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\MainWindow.baml
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.g.resources
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation_Drawer_App.Properties.Resources.resources
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.GenerateResource.cache
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.CoreCompileInputs.cache
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.CopyComplete
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.exe
+C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.pdb
