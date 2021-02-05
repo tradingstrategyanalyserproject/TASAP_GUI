@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio Version 16
+# Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASAP_GUI", "TASAP_GUI\TASAP_GUI.csproj", "{8FA00EFF-CC13-40E6-A3CB-19E54E8435EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASAP_COM", "TASAP_COM\TASAP_COM.csproj", "{46FF187D-B65C-4EEF-8164-ADA64317E2F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8FA00EFF-CC13-40E6-A3CB-19E54E8435EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA00EFF-CC13-40E6-A3CB-19E54E8435EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA00EFF-CC13-40E6-A3CB-19E54E8435EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46FF187D-B65C-4EEF-8164-ADA64317E2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46FF187D-B65C-4EEF-8164-ADA64317E2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46FF187D-B65C-4EEF-8164-ADA64317E2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46FF187D-B65C-4EEF-8164-ADA64317E2F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,6 @@
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\TASAP_COM.exe.config
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\TASAP_COM.exe
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\TASAP_COM.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\obj\Debug\TASAP_COM.csproj.CoreCompileInputs.cache
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\obj\Debug\TASAP_COM.exe
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\obj\Debug\TASAP_COM.pdb
