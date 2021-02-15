@@ -56,3 +56,13 @@ C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLD
 C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.CopyComplete
 C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.exe
 C:\Users\33695\Documents\Cours\S9\PFE\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignColors.dll
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignColors.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csprojAssemblyReference.cache
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\App.baml
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\TASAP_COM.exe
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\TASAP_COM.pdb
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\TASAP_COM.exe.config
