@@ -15,11 +15,11 @@ namespace TASAP_COM
             // Initiallize test values for building the URL to get the Json we want to deserialize
             // URL example : htp://127.0.0.1:5000/price/call/100/100/12/5/30 (htp://127.0.0.1:5000/price/type/spot/strike/time/rate/vol)
             WebClient client = new WebClient();
-            Optionrequest optionrequest = new Optionrequest("put",100,100,12,5,30);
-            string jsonoptionanswer = client.DownloadString(optionrequest.buildRequest().ToString());
+            OptionRequest OptionRequest = new OptionRequest("put",100,100,12,5,30);
+            string jsonoptionanswer = client.DownloadString(OptionRequest.buildRequest().ToString());
 
             // Check print : Total path 4 Json file
-            Console.WriteLine(optionrequest.buildRequest().ToString());
+            Console.WriteLine(OptionRequest.buildRequest().ToString());
             Console.WriteLine("Got the Json, Ready to implement the dictionnary ...");
 
             //Having technically no idea of what type of value the Json is composed we will use dynamics objects (eventhough i have never experienced them)

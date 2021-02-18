@@ -78,3 +78,44 @@ E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.WinForms.xml
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.Wpf.pdb
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Navigation Drawer App.exe.config
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Navigation Drawer App.exe
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Navigation Drawer App.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Highcharts.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignColors.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\ScottPlot.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\ScottPlot.WPF.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\System.Drawing.Common.dll
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\TASAP_COM.exe
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\TASAP_COM.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\TASAP_COM.exe.config
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.xml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csprojAssemblyReference.cache
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\MainWindow.g.cs
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\App.g.cs
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App_MarkupCompile.cache
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App_MarkupCompile.lref
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\App.baml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\MainWindow.baml
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.g.resources
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation_Drawer_App.Properties.Resources.resources
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.GenerateResource.cache
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.CoreCompileInputs.cache
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\TASAP_GUI.csproj.CopyComplete
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.exe
+C:\Users\Gabin\Documents\Dev\PFE_Pricer_Project\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_GUI\obj\Debug\Navigation Drawer App.pdb

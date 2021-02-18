@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TASAP_COM
 {
-    public class Optionrequest
+    public class OptionRequest : IOptionRequest
     {
         private const string rooturl = "http://127.0.0.1:5000/price";
         private string type;
@@ -17,10 +17,13 @@ namespace TASAP_COM
         private int time;
         private int rate;
         private int vol;
+        private int variable;
+        private int min;
+        private int max;
         private List<object> list4request;
 
 
-        public Optionrequest(string type, int spot, int strike, int time, int rate, int vol)
+        public OptionRequest(string type, int spot, int strike, int time, int rate, int vol)
         {
             list4request = new List<object>();
             this.type = type;
@@ -38,6 +41,41 @@ namespace TASAP_COM
             buildRequest();
         }
 
+        public OptionRequest(int variable, int min, int max, string type, int strike, int spot, int time, int rate, int vol)
+        {
+            list4request = new List<object>();
+            this.variable = variable;
+            list4request.Add(min);
+            this.min = min;
+            list4request.Add(max);
+            this.max = max;
+            list4request.Add(variable);
+            this.type = type;
+            list4request.Add(type);
+            this.spot = spot;
+            list4request.Add(spot);
+            this.strike = strike;
+            list4request.Add(strike);
+            this.time = time;
+            list4request.Add(time);
+            this.rate = rate;
+            list4request.Add(rate);
+            this.vol = vol;
+            list4request.Add(vol);
+            buildRequest();
+        }
+
+
+        public string Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Spot { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Strike { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Time { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Rate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Vol { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Variable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Min { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Max { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public StringBuilder buildRequest()
         {
             StringBuilder request = new StringBuilder();
@@ -48,6 +86,11 @@ namespace TASAP_COM
                 request.Append(obj.ToString());           
             }
             return request;
+        }
+
+        public int CompareTo(IOptionRequest other)
+        {
+            throw new NotImplementedException();
         }
 
         public Greecs Rfq_Handler()

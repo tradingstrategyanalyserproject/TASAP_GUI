@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OptionRequestMaker.cs" />
+    <Compile Include="IOptionRequest.cs" />
     <Compile Include="Greecs.cs" />
-    <Compile Include="Optionrequest.cs" />
+    <Compile Include="OptionRequest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

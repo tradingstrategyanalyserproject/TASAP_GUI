@@ -222,19 +222,37 @@
 
             <StackPanel x:Name="SP_StrikePrice" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="STPrb" Style="{StaticResource MaterialDesignTabRadioButton}" Click="STPrb_Click"  Content="Strike Price"/>
-                <Slider x:Name="StrikePriceSlider" Thumb.DragCompleted="Slider_DragCompletedSP"  Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"/>
-                <TextBlock IsEnabled="False" x:Name="StrikePriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
+                <TextBlock IsEnabled="True" x:Name="StrikePriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
+                <Label Margin="17,1,0,0">Min :</Label>
+                <TextBox IsEnabled="False" x:Name="StrikePriceValmin"  Margin="8,3,0,0">0</TextBox>
+                <Label Margin="18,1,0,0">Max :</Label>
+                <TextBox IsEnabled="False" x:Name="StrikePriceValmax"  Margin="2,3,0,0">0</TextBox>
             </StackPanel>
             <StackPanel x:Name="SP_StockPrice" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="STKrb" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="STKrb_Click" Content="Stock Price"/>
-                <Slider x:Name="StockPriceSlider" Thumb.DragCompleted="StockPriceSlider_DragCompletedSTP" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"/>
                 <TextBlock IsEnabled="False" x:Name="StockPriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
+                <Label Margin="17,1,0,0">Min :</Label>
+                <TextBox IsEnabled="False" x:Name="StockPriceValmin"  Margin="8,3,0,0">0</TextBox>
+                <Label Margin="18,1,0,0">Max :</Label>
+                <TextBox IsEnabled="False" x:Name="StockPriceValmax"  Margin="2,3,0,0">0</TextBox>
 
             </StackPanel>
             <StackPanel x:Name="SP_TimeToMaturity" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Content="Maturity"/>
-                <Slider x:Name="MaturitySlider" Thumb.DragCompleted="MaturitySlider_DragCompleted" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="12"  Value="6"/>
-                <TextBlock IsEnabled="False" x:Name="MaturityVal"  Margin="5,5,0,0"><Run Text="6"/></TextBlock>
+                <RadioButton IsEnabled="False"  Style="{StaticResource MaterialDesignTabRadioButton}" Content="Maturity"/>
+                <ComboBox Name="MaturityCb"  materialDesign:HintAssist.Hint="Search" materialDesign:HintAssist.HintOpacity=".26" IsEditable="True" Width="auto" DropDownClosed="MaturityCb_Selected">
+                    <ComboBoxItem>1 month</ComboBoxItem>
+                    <ComboBoxItem>3 months</ComboBoxItem>
+                    <ComboBoxItem>6 months</ComboBoxItem>
+                    <ComboBoxItem>1 year</ComboBoxItem>
+                    <ComboBoxItem>2 years</ComboBoxItem>
+                    <ComboBoxItem>5 years</ComboBoxItem>
+                    <ComboBoxItem>10 years</ComboBoxItem>
+                    <ComboBoxItem>12 years</ComboBoxItem>
+                    <ComboBoxItem>15 years</ComboBoxItem>
+                    <ComboBoxItem>20 years</ComboBoxItem>
+                    <ComboBoxItem>30 years</ComboBoxItem>
+                </ComboBox>
+                <TextBlock IsEnabled="False" x:Name="MaturityVal"  Margin="16,5,0,0"><Run Text="6"/></TextBlock>
 
             </StackPanel>
         </Grid>
@@ -251,15 +269,17 @@
             </Grid.RowDefinitions>
 
             <StackPanel x:Name="SP_RiskFreeRate" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton IsEnabled="False"  Style="{StaticResource MaterialDesignTabRadioButton}" Content="Risk Free Rate" Foreground="#DD000000"/>
-                <Slider x:Name="RfRateSlider" Thumb.DragCompleted="RfRateSlider_DragCompleted" Margin="0,5,0,0" Width="140" TickFrequency="5" Orientation="Horizontal" Minimum="0" Maximum="1"  Value="0"/>
-                <TextBlock IsEnabled="False" x:Name="RfRateVal"  Margin="5,5,0,0"><Run Text="0"/></TextBlock>
+                <RadioButton IsEnabled="False"  Style="{StaticResource MaterialDesignTabRadioButton}" Content="Risk Free Rate" Foreground="Black"/>
+                <TextBox IsEnabled="True" x:Name="RfRateVal"  Margin="5,5,0,0">0</TextBox>
             </StackPanel>
 
             <StackPanel x:Name="SP_Volatitlity" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="Volrb" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="Volrb_Click" Content="Volatility"/>
-                <Slider  x:Name="VolatilitySlider" Thumb.DragCompleted="VolatilitySlider_DragCompleted" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"/>
                 <TextBlock IsEnabled="False" x:Name="VolatilityVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
+                <Label Margin="17,1,0,0">Min :</Label>
+                <TextBox IsEnabled="False" x:Name="VolatilityValmin"  Margin="8,3,0,0">0</TextBox>
+                <Label Margin="18,1,0,0">Max :</Label>
+                <TextBox IsEnabled="False" x:Name="VolatilityValmax"  Margin="2,3,0,0">0</TextBox>
             </StackPanel>
 
             <StackPanel x:Name="GreecsPanel" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
@@ -296,5 +316,4 @@
 
         </Grid>
     </Grid>
-
 </Window>

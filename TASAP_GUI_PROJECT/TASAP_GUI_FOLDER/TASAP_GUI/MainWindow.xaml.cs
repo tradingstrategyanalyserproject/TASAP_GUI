@@ -26,6 +26,7 @@ namespace TASAP_GUI
         string optionType = "put";
         public List<RadioButton> rblist = new List<RadioButton>();
         Greecs answerGreecs;
+        String currentNameX;
 
         public MainWindow()
 
@@ -53,41 +54,12 @@ namespace TASAP_GUI
 
         }
 
-        private void Slider_DragCompletedSP(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
-        {
-            int strikePriceVal = (int)StrikePriceSlider.Value;
-            StrikePriceVal.Text = strikePriceVal.ToString();
-        }
-
-        private void StockPriceSlider_DragCompletedSTP(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
-        {
-            int stockPriceVal = (int)StockPriceSlider.Value;
-            StockPriceVal.Text = stockPriceVal.ToString();
-        }
-
-        private void MaturitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
-        {
-            int marturityVal = (int)MaturitySlider.Value;
-            MaturityVal.Text = marturityVal.ToString();
-        }
-
-        private void RfRateSlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
-        {
-            int rfRateVal = (int)RfRateSlider.Value;
-            RfRateVal.Text = rfRateVal.ToString();
-        }
-
-        private void VolatilitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
-        {
-            int volatilityVal = (int)VolatilitySlider.Value;
-            VolatilityVal.Text = volatilityVal.ToString();
-        }
-
         private void Launch_Click(object sender, RoutedEventArgs e)
         {
             // When clicking on Launch button, we call the OptionRequest Class we builded in the TASAP COM Project
-            Optionrequest optionrequest = new Optionrequest(optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
-            answerGreecs = optionrequest.Rfq_Handler();
+            //OptionRequest OptionRequest = OptionRequestMaker.MakeOptionRequest(variable, min, max, optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
+            //OptionRequest OptionRequest = OptionRequestMaker.MakeOptionRequest(optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
+            //answerGreecs = OptionRequest.Rfq_Handler();
             PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString();
             BuildChart();
             AddChartSerie("gamma");
@@ -106,14 +78,23 @@ namespace TASAP_GUI
 
         private void STPrb_Click(object sender, RoutedEventArgs e)
         {
-            if((bool)STPrb.IsChecked)
-            foreach(RadioButton rb in rblist)
+            if ((bool)STPrb.IsChecked)
+                foreach (RadioButton rb in rblist)
                 {
-                    if(rb.Name != STPrb.Name)
+                    if (rb.Name != STPrb.Name)
                     {
                         rb.IsChecked = false;
                     }
                 }
+            StockPriceValmin.IsEnabled = false;
+            StockPriceValmax.IsEnabled = false;
+
+            VolatilityValmin.IsEnabled = false;
+            VolatilityValmax.IsEnabled = false;
+
+            StrikePriceValmin.IsEnabled = true;
+            StrikePriceValmax.IsEnabled = true;
+
         }
 
         private void STKrb_Click(object sender, RoutedEventArgs e)
@@ -126,6 +107,15 @@ namespace TASAP_GUI
                         rb.IsChecked = false;
                     }
                 }
+            StrikePriceValmin.IsEnabled = false;
+            StrikePriceValmax.IsEnabled = false;
+
+            VolatilityValmin.IsEnabled = false;
+            VolatilityValmax.IsEnabled = false;
+
+            StockPriceValmin.IsEnabled = true;
+            StockPriceValmax.IsEnabled = true;
+
         }
 
         private void Volrb_Click(object sender, RoutedEventArgs e)
@@ -138,6 +128,31 @@ namespace TASAP_GUI
                         rb.IsChecked = false;
                     }
                 }
+            StockPriceValmin.IsEnabled = false;
+            StockPriceValmax.IsEnabled = false;
+
+            StrikePriceValmin.IsEnabled = false;
+            StrikePriceValmax.IsEnabled = false;
+
+            VolatilityValmin.IsEnabled = true;
+            VolatilityValmax.IsEnabled = true;
+        }
+
+        private void MaturityCb_Selected(object sender, EventArgs e)
+        {
+            string maturity = MaturityCb.Text;
+            Console.WriteLine("THE SELECTED ITEM IS:" + maturity);
+            if (maturity == "1 month") { MaturityVal.Text = "0,083"; }
+            else if (maturity == "3 months") { MaturityVal.Text = "0,25"; }
+            else if (maturity == "6 months") { MaturityVal.Text = "0,5"; }
+            else if (maturity == "1 year") { MaturityVal.Text = "1"; }
+            else if (maturity == "2 years") { MaturityVal.Text = "2"; }
+            else if (maturity == "5 years") { MaturityVal.Text = "5"; }
+            else if (maturity == "10 years") { MaturityVal.Text = "10"; }
+            else if (maturity == "12 years") { MaturityVal.Text = "12"; }
+            else if (maturity == "15 years") { MaturityVal.Text = "15"; }
+            else if (maturity == "20 years") { MaturityVal.Text = "20"; }
+            else if (maturity == "30 years") { MaturityVal.Text = "30"; }
         }
         #endregion
 
@@ -148,8 +163,9 @@ namespace TASAP_GUI
         {
             foreach (RadioButton rb in rblist)
             {
-                if ((bool)rb.IsChecked)
+                if (rb.IsChecked == true)
                 {
+                    //Console.WriteLine(rb.Name + "zeifhjgzeyufhé" + (bool)rb.IsChecked);
                     return rb.Name;
                 }
 
@@ -166,11 +182,20 @@ namespace TASAP_GUI
 
             DataChart.Series.Clear();
 
+            foreach (RadioButton rb in rblist)
+            {
+                if (rb.IsChecked == true)
+                {
+                    currentNameX = rb.Name;
+                }
+            }
+
             // Naming new Axis
             DataChart.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Title = GetCheckedParam(),
+                Title = currentNameX,
             });
+
             DataChart.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Greec(s)",
@@ -180,6 +205,7 @@ namespace TASAP_GUI
             SeriesCollection series = new SeriesCollection();
             series.Add(new LineSeries() { Title = "FIST", Values = new ChartValues<double> { 2, 3, 4, 5 } });
             DataChart.Series = series;
+        
         }
 
 
@@ -206,7 +232,7 @@ namespace TASAP_GUI
         {
             foreach(LineSeries ls in DataChart.Series)
             {
-                if (ls.Name == grec)
+                if (ls.Title == grec)
                 {
                     Console.WriteLine("Got insode");
                     DataChart.Series.Remove(ls);
