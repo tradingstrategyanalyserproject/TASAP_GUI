@@ -90,6 +90,7 @@ namespace TASAP_GUI
             answerGreecs = optionrequest.Rfq_Handler();
             PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString();
             BuildChart();
+            AddChartSerie("gamma");
         }
 
         private void OptionType_Checked(object sender, RoutedEventArgs e)
@@ -155,7 +156,6 @@ namespace TASAP_GUI
                 else return null;
             }
             return null;
-
         }
 
         private void BuildChart()
@@ -188,7 +188,8 @@ namespace TASAP_GUI
             List<double> values = new List<double>();
             foreach (Object key in answerGreecs.greecsdico.Keys)
             {
-                if (key.ToString() == grec)
+                Console.WriteLine(key.ToString());
+                if (key.ToString() == grec+": ")
                 {
                     values.Add(Convert.ToDouble(answerGreecs.greecsdico[key]));
                 }
@@ -199,6 +200,7 @@ namespace TASAP_GUI
         private void AddChartSerie(string grec)
         {
             DataChart.Series.Add(new LineSeries() { Title = grec, Values = new ChartValues<double>(ConvertForChart(grec))});
+            Console.WriteLine("Added to the chart" + ConvertForChart(grec));
         }
 
         #endregion

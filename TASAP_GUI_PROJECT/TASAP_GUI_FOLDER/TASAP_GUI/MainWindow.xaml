@@ -201,6 +201,14 @@
 
         </StackPanel>
 
+        <StackPanel Orientation="Horizontal" Margin="268.5,0,162,24" Grid.Row="1" >
+            <Button x:Name="Launch" Click="Launch_Click" Width="120" Height="40 " 
+                        Style="{StaticResource MaterialDesignRaisedButton}" Content="Launch"/>
+            <Label Margin= "10,0,0,0" Foreground="White" VerticalAlignment="Center" Content="Result :"/>
+            <Label Margin="5,7,0,0" Foreground="White" x:Name="PayoffVal"/>
+
+        </StackPanel>
+
         <Grid x:Name="GraphGrid" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="800" Margin="0,229,0,0" Grid.Row="2" Grid.ColumnSpan="3" >
             <Wpf:CartesianChart x:Name="DataChart">
             </Wpf:CartesianChart>
@@ -230,7 +238,7 @@
 
             </StackPanel>
         </Grid>
-        <Grid x:Name="ParamsGridRight" HorizontalAlignment="Left" Height="230" Margin="422,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="289" Grid.ColumnSpan="2">
+        <Grid x:Name="ParamsGridRight" HorizontalAlignment="Left" Height="230" Margin="422,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="350" Grid.ColumnSpan="2">
             <Grid.Resources>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="Margin" Value="0,0,8,0"/>
@@ -254,13 +262,38 @@
                 <TextBlock IsEnabled="False" x:Name="VolatilityVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
-                <Button x:Name="Launch" Click="Launch_Click" Width="120" Height="40 " 
-                        Style="{StaticResource MaterialDesignRaisedButton}" Content="Launch"/>
-                <Label Margin= "10,0,0,0" Foreground="White" VerticalAlignment="Center" Content="Result :"/>
-                <Label Margin="5,7,0,0" Foreground="White" x:Name="PayoffVal"/>
-
+            <StackPanel x:Name="GreecsPanel" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+                <ListBox SelectionMode="Extended" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" Background="{x:Null}">
+                    <ListBox.ToolTip>
+                        <StackPanel>
+                            <TextBlock
+                                Text="MaterialDesignToolToggleListBox" />
+                            <TextBlock
+                                Text="Multiple selection" />
+                            <TextBlock
+                                Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                        </StackPanel>
+                    </ListBox.ToolTip>
+                    <ListBoxItem>
+                        <Label>Delta</Label>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Label>Gamma</Label>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Label>Vega</Label>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Label>Theta</Label>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Label>Rho</Label>
+                    </ListBoxItem>
+                </ListBox>
             </StackPanel>
+
+
+
         </Grid>
     </Grid>
 
