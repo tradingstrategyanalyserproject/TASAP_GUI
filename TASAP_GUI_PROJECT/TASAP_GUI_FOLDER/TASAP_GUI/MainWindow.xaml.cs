@@ -36,6 +36,9 @@ namespace TASAP_GUI
             rblist.Add(Volrb);
         }
 
+
+        #region Components actions 
+
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
         {
 
@@ -89,60 +92,6 @@ namespace TASAP_GUI
             BuildChart();
         }
 
-        private string GetCheckedParam()
-        {
-            foreach(RadioButton rb in rblist)
-            {
-                if ((bool)rb.IsChecked)
-                {
-                    return rb.Name;
-                }
-
-                else return null;
-            }
-            return null;
-
-        }
-
-        private void BuildChart()
-        {
-            //For some reason i had to clear Axis to have a clean result
-            DataChart.AxisX.Clear();
-            DataChart.AxisY.Clear();
-
-            DataChart.Series.Clear();
-
-            // Naming new Axis
-            DataChart.AxisX.Add(new LiveCharts.Wpf.Axis{
-                Title = GetCheckedParam(),
-            });
-            DataChart.AxisY.Add(new LiveCharts.Wpf.Axis {
-                Title = "Greec(s)",
-            }
-           );
-
-            SeriesCollection series = new SeriesCollection();
-            series.Add(new LineSeries() { Title = "FIST", Values = new ChartValues<double> { 2 , 3 , 4, 5}});
-            DataChart.Series = series;
-        }
-
-
-        private List<double> ConvertForChart(string grec)
-        {
-            List<double> values = new List<double>();
-            //SET A LOOP TO CHECK WANTED GREECS WHEN ADDED TO THE WINDOW SELECTOR
-            foreach(Object key in answerGreecs.greecsdico.Keys)
-            {
-                if(key.ToString() == grec)
-                {
-                    values.Add(Convert.ToDouble(answerGreecs.greecsdico[key]));
-                }
-            }
-            return values;
-        }
-
-
-
         private void OptionType_Checked(object sender, RoutedEventArgs e)
         {
             optionType = "call";
@@ -189,5 +138,69 @@ namespace TASAP_GUI
                     }
                 }
         }
+        #endregion
+
+
+        #region Chart functions
+
+        private string GetCheckedParam()
+        {
+            foreach (RadioButton rb in rblist)
+            {
+                if ((bool)rb.IsChecked)
+                {
+                    return rb.Name;
+                }
+
+                else return null;
+            }
+            return null;
+
+        }
+
+        private void BuildChart()
+        {
+            //For some reason i had to clear Axis to have a clean result
+            DataChart.AxisX.Clear();
+            DataChart.AxisY.Clear();
+
+            DataChart.Series.Clear();
+
+            // Naming new Axis
+            DataChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = GetCheckedParam(),
+            });
+            DataChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Greec(s)",
+            }
+           );
+
+            SeriesCollection series = new SeriesCollection();
+            series.Add(new LineSeries() { Title = "FIST", Values = new ChartValues<double> { 2, 3, 4, 5 } });
+            DataChart.Series = series;
+        }
+
+
+        private List<double> ConvertForChart(string grec)
+        {
+            List<double> values = new List<double>();
+            foreach (Object key in answerGreecs.greecsdico.Keys)
+            {
+                if (key.ToString() == grec)
+                {
+                    values.Add(Convert.ToDouble(answerGreecs.greecsdico[key]));
+                }
+            }
+            return values;
+        }
+
+        private void AddChartSerie(string grec)
+        {
+            DataChart.Series.Add(new LineSeries() { Title = grec, Values = new ChartValues<double>(ConvertForChart(grec))});
+        }
+
+        #endregion
     }
 }
