@@ -28,7 +28,7 @@ namespace TASAP_COM
             // Initializing the Greecs class to store the Json infos into a dictionnary
             Greecs answerGreecs = new Greecs();
             answerGreecs.GreecsJson(dynobject);
-            Dictionary<Object, Object> myTest = answerGreecs.greecsdico;
+            Dictionary<Object, string> myTest = answerGreecs.greecsdico;
 
             // Check print : Total path 4 Json file
             Console.WriteLine("Checking if the dictionnary is well implemented ...");

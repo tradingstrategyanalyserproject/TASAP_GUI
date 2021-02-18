@@ -1,9 +1,11 @@
-﻿<Window x:Class="TASAP_GUI.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TASAP_GUI"
+        xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="TASAP_GUI.MainWindow"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -11,7 +13,6 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        xmlns:local="clr-namespace:TASAP_GUI"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600" 
@@ -30,7 +31,7 @@
 
         <!--// Text font style //-->
 
-        <Style x:Key="font_style" TargetType="TextBlock">
+        <Style x:Key="font_style" TargetType="{x:Type TextBlock}">
 
             <Setter Property="FontFamily"
                     Value="Fonts/Roboto-Light.ttf #Roboto"/>
@@ -51,7 +52,7 @@
 
         <!--// Tooltip Style Template //-->
 
-        <Style TargetType="ToolTip" x:Key="tt_style">
+        <Style TargetType="{x:Type ToolTip}" x:Key="tt_style">
 
             <Setter Property="Placement" Value="Right"/>
             <Setter Property="Height" Value="40"/>
@@ -85,9 +86,7 @@
                         <Border x:Name="button"
                                 BorderThickness="0"
                                 Background="{TemplateBinding Background}"
-                                SnapsToDevicePixels="True">
-
-                        </Border>
+                                SnapsToDevicePixels="True"/>
 
                         <ControlTemplate.Triggers>
 
@@ -124,9 +123,7 @@
                         <Border  x:Name="border"
                                  BorderThickness="{TemplateBinding BorderThickness}"
                                  Background="{TemplateBinding Background}"
-                                 SnapsToDevicePixels="True">
-
-                        </Border>
+                                 SnapsToDevicePixels="True"/>
 
                         <ControlTemplate.Triggers>
 
@@ -196,22 +193,17 @@
 
 
         <StackPanel Orientation="Horizontal" Margin="0,0,254,0" HorizontalAlignment="Right" Width="116">
-            <TextBlock Name="Put" IsEnabled="False" Margin="0,9,12,0">Put</TextBlock>
-            <ToggleButton Name="OptionType" Thumb.DragCompleted="ToggleButton_DragCompleted"
+            <TextBlock x:Name="Put" IsEnabled="False" Margin="0,9,12,0"><Run Text="Put"/></TextBlock>
+            <ToggleButton x:Name="OptionType"  Checked="OptionType_Checked" Unchecked="OptionType_Unchecked" 
             Style="{StaticResource MaterialDesignSwitchToggleButton}"
-            ToolTip="MaterialDesignSwitchToggleButton with Custom Track Background">
-                <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
-                    <SolidColorBrush Color="Green" />
-                </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
-                <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
-                    <SolidColorBrush Color="Red" />
-                </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
-            </ToggleButton>
-            <TextBlock Name="Call" IsEnabled="False" Margin="12,9,0,0">Call</TextBlock>
+            ToolTip="MaterialDesignSwitchToggleButton with Custom Track Background" materialDesign:ToggleButtonAssist.SwitchTrackOnBackground="Green" materialDesign:ToggleButtonAssist.SwitchTrackOffBackground="Red"/>
+            <TextBlock x:Name="Call" IsEnabled="False" Margin="12,9,0,0"><Run Text="Call"/></TextBlock>
 
         </StackPanel>
 
-        <Grid x:Name="GraphGrid" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="800" Margin="0,229,0,0" Grid.Row="2" Grid.ColumnSpan="3"/>
+        <Grid x:Name="GraphGrid" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="800" Margin="0,229,0,0" Grid.Row="2" Grid.ColumnSpan="3" >
+
+        </Grid>
         <Grid x:Name="ParamsGridLeft" HorizontalAlignment="Left" Height="230" Margin="80,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="300">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -220,26 +212,26 @@
             </Grid.RowDefinitions>
 
             <StackPanel x:Name="SP_StrikePrice" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}">Strike Price</RadioButton>
-                <Slider Name="StrikePriceSlider" Thumb.DragCompleted="Slider_DragCompletedSP"  Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"></Slider>
-                <TextBlock IsEnabled="False" Name="StrikePriceVal"  Margin="5,5,0,0">50</TextBlock>
+                <RadioButton Name="STPrb" Style="{StaticResource MaterialDesignTabRadioButton}" Click="STPrb_Click"  Content="Strike Price"/>
+                <Slider x:Name="StrikePriceSlider" Thumb.DragCompleted="Slider_DragCompletedSP"  Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"/>
+                <TextBlock IsEnabled="False" x:Name="StrikePriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
             </StackPanel>
             <StackPanel x:Name="SP_StockPrice" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}">Stock Price</RadioButton>
-                <Slider Name="StockPriceSlider" Thumb.DragCompleted="StockPriceSlider_DragCompletedSTP" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"></Slider>
-                <TextBlock IsEnabled="False" Name="StockPriceVal"  Margin="5,5,0,0">50</TextBlock>
+                <RadioButton Name="STKrb" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="STKrb_Click" Content="Stock Price"/>
+                <Slider x:Name="StockPriceSlider" Thumb.DragCompleted="StockPriceSlider_DragCompletedSTP" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"/>
+                <TextBlock IsEnabled="False" x:Name="StockPriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
 
             </StackPanel>
             <StackPanel x:Name="SP_TimeToMaturity" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}">Maturity</RadioButton>
-                <Slider Name="MaturitySlider" Thumb.DragCompleted="MaturitySlider_DragCompleted" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="12"  Value="6"></Slider>
-                <TextBlock IsEnabled="False" Name="MaturityVal"  Margin="5,5,0,0">6</TextBlock>
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Content="Maturity"/>
+                <Slider x:Name="MaturitySlider" Thumb.DragCompleted="MaturitySlider_DragCompleted" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="12"  Value="6"/>
+                <TextBlock IsEnabled="False" x:Name="MaturityVal"  Margin="5,5,0,0"><Run Text="6"/></TextBlock>
 
             </StackPanel>
         </Grid>
         <Grid x:Name="ParamsGridRight" HorizontalAlignment="Left" Height="230" Margin="422,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="289" Grid.ColumnSpan="2">
             <Grid.Resources>
-                <Style TargetType="CheckBox">
+                <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="Margin" Value="0,0,8,0"/>
                 </Style>
             </Grid.Resources>
@@ -250,24 +242,23 @@
             </Grid.RowDefinitions>
 
             <StackPanel x:Name="SP_RiskFreeRate" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}">Rick Free Rate</RadioButton>
-                <Slider Name="RfRateSlider" Thumb.DragCompleted="RfRateSlider_DragCompleted" Margin="0,5,0,0" Width="140" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"></Slider>
-                <TextBlock IsEnabled="False" Name="RfRateVal"  Margin="5,5,0,0">50</TextBlock>
+                <RadioButton IsEnabled="False"  Style="{StaticResource MaterialDesignTabRadioButton}" Content="Risk Free Rate" Foreground="#DD000000"/>
+                <Slider x:Name="RfRateSlider" Thumb.DragCompleted="RfRateSlider_DragCompleted" Margin="0,5,0,0" Width="140" TickFrequency="5" Orientation="Horizontal" Minimum="0" Maximum="1"  Value="0"/>
+                <TextBlock IsEnabled="False" x:Name="RfRateVal"  Margin="5,5,0,0"><Run Text="0"/></TextBlock>
             </StackPanel>
 
             <StackPanel x:Name="SP_Volatitlity" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}">Volatility</RadioButton>
-                <Slider Name="VolatilitySlider" Thumb.DragCompleted="VolatilitySlider_DragCompleted" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"></Slider>
-                <TextBlock IsEnabled="False" Name="VolatilityVal"  Margin="5,5,0,0">50</TextBlock>
+                <RadioButton Name="Volrb" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="Volrb_Click" Content="Volatility"/>
+                <Slider  x:Name="VolatilitySlider" Thumb.DragCompleted="VolatilitySlider_DragCompleted" Margin="0,5,0,0" Width="150" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100"  Value="50"/>
+                <TextBlock IsEnabled="False" x:Name="VolatilityVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
-                <Button Name="Launch" Click="Launch_Click" Width="120" Height="40 " Style="{StaticResource MaterialDesignRaisedButton}"
-                        materialDesign:ButtonProgressAssist.Value="-1"
-                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-                        materialDesign:ButtonProgressAssist.IsIndeterminate="True">Launch
-                </Button>
-                <TextBlock TextAlignment="Center" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="15.96" Width="168">Result</TextBlock>
+                <Button x:Name="Launch" Click="Launch_Click" Width="120" Height="40 " 
+                        Style="{StaticResource MaterialDesignRaisedButton}" Content="Launch"/>
+                <Label Margin= "10,0,0,0" Foreground="White" VerticalAlignment="Center" Content="Result :"/>
+                <Label Margin="5,7,0,0" Foreground="White" x:Name="PayoffVal"/>
+
             </StackPanel>
         </Grid>
     </Grid>

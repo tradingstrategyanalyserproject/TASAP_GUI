@@ -12,15 +12,15 @@ namespace TASAP_COM
     {
         private const string rooturl = "http://127.0.0.1:5000/price";
         private string type;
-        private double spot;
-        private double strike;
+        private int spot;
+        private int strike;
         private int time;
-        private double rate;
-        private double vol;
+        private int rate;
+        private int vol;
         private List<object> list4request;
 
 
-        public Optionrequest(string type, double spot, double strike, int time, double rate, double vol)
+        public Optionrequest(string type, int spot, int strike, int time, int rate, int vol)
         {
             list4request = new List<object>();
             this.type = type;
@@ -67,7 +67,7 @@ namespace TASAP_COM
             // Initializing the Greecs class to store the Json infos into a dictionnary
             Greecs answerGreecs = new Greecs();
             answerGreecs.GreecsJson(dynobject);
-            Dictionary<Object, Object> myTest = answerGreecs.greecsdico;
+            Dictionary<Object, string> myTest = answerGreecs.greecsdico;
 
             // Check print : Total path 4 Json file
             Console.WriteLine("Checking if the dictionnary is well implemented ...");

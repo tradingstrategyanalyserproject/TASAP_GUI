@@ -8,3 +8,6 @@ E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\Newtonsoft.Json.xml
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\obj\Debug\TASAP_COM.csprojAssemblyReference.cache
 E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\obj\Debug\TASAP_COM.csproj.CopyComplete
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\ScottPlot.dll
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\ScottPlot.WPF.dll
+E:\Semester_9\PFE_Trading Analyse Strategy\TASAP_GUI\TASAP_GUI_PROJECT\TASAP_GUI_FOLDER\TASAP_COM\bin\Debug\System.Drawing.Common.dll
