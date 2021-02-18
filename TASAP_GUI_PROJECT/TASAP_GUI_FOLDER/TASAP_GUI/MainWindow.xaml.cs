@@ -188,7 +188,6 @@ namespace TASAP_GUI
             List<double> values = new List<double>();
             foreach (Object key in answerGreecs.greecsdico.Keys)
             {
-                Console.WriteLine(key.ToString());
                 if (key.ToString() == grec+": ")
                 {
                     values.Add(Convert.ToDouble(answerGreecs.greecsdico[key]));
@@ -203,6 +202,72 @@ namespace TASAP_GUI
             Console.WriteLine("Added to the chart" + ConvertForChart(grec));
         }
 
+        private void RemoveChartSeries(string grec)
+        {
+            foreach(LineSeries ls in DataChart.Series)
+            {
+                if (ls.Name == grec)
+                {
+                    Console.WriteLine("Got insode");
+                    DataChart.Series.Remove(ls);
+                }
+            }
+        }
+
         #endregion
+
+        #region Greec selection
+
+        private void DeltaCheck_Selected(object sender, RoutedEventArgs e)
+        {
+            AddChartSerie("delta");
+        }
+
+        private void GammaCheck_Selected(object sender, RoutedEventArgs e)
+        {
+            AddChartSerie("gamma");
+        }
+
+        private void VegaCheck_Selected(object sender, RoutedEventArgs e)
+        {
+            AddChartSerie("vega");
+        }
+
+        private void ThetaCheck_Selected(object sender, RoutedEventArgs e)
+        {
+            AddChartSerie("theta");
+        }
+
+        private void RhoCheck_Selected(object sender, RoutedEventArgs e)
+        {
+            AddChartSerie("rho");
+        }
+
+        #endregion
+
+        private void DeltaCheck_Unselected(object sender, RoutedEventArgs e)
+        {
+            RemoveChartSeries("delta");
+        }
+
+        private void GammaCheck_Unselected(object sender, RoutedEventArgs e)
+        {
+            RemoveChartSeries("gamma");
+        }
+
+        private void VegaCheck_Unselected(object sender, RoutedEventArgs e)
+        {
+            RemoveChartSeries("vega");
+        }
+
+        private void ThetaCheck_Unselected(object sender, RoutedEventArgs e)
+        {
+            RemoveChartSeries("theta");
+        }
+
+        private void RhoCheck_Unselected(object sender, RoutedEventArgs e)
+        {
+            RemoveChartSeries("rho");
+        }
     }
 }

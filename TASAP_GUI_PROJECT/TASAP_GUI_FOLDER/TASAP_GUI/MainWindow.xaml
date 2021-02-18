@@ -192,7 +192,7 @@
 
 
 
-        <StackPanel Orientation="Horizontal" Margin="0,0,254,0" HorizontalAlignment="Right" Width="116">
+        <StackPanel x:Name="Putorcall" Orientation="Horizontal" Margin="0,0,254,0" HorizontalAlignment="Right" Width="116">
             <TextBlock x:Name="Put" IsEnabled="False" Margin="0,9,12,0"><Run Text="Put"/></TextBlock>
             <ToggleButton x:Name="OptionType"  Checked="OptionType_Checked" Unchecked="OptionType_Unchecked" 
             Style="{StaticResource MaterialDesignSwitchToggleButton}"
@@ -201,7 +201,7 @@
 
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="268.5,0,162,24" Grid.Row="1" >
+        <StackPanel x:Name="Result" Orientation="Horizontal" Margin="268.5,0,162,0" Grid.Row="1" >
             <Button x:Name="Launch" Click="Launch_Click" Width="120" Height="40 " 
                         Style="{StaticResource MaterialDesignRaisedButton}" Content="Launch"/>
             <Label Margin= "10,0,0,0" Foreground="White" VerticalAlignment="Center" Content="Result :"/>
@@ -274,19 +274,19 @@
                                 Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
                         </StackPanel>
                     </ListBox.ToolTip>
-                    <ListBoxItem>
+                    <ListBoxItem x:Name="DeltaCheck" Unselected="DeltaCheck_Unselected" Selected="DeltaCheck_Selected">
                         <Label>Delta</Label>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem x:Name="GammaCheck" Unselected="GammaCheck_Unselected" Selected="GammaCheck_Selected">
                         <Label>Gamma</Label>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem x:Name="VegaCheck" Unselected="VegaCheck_Unselected" Selected="VegaCheck_Selected">
                         <Label>Vega</Label>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem x:Name="ThetaCheck" Unselected="ThetaCheck_Unselected" Selected="ThetaCheck_Selected">
                         <Label>Theta</Label>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem x:Name="RhoCheck" Unselected="RhoCheck_Unselected" Selected="RhoCheck_Selected">
                         <Label>Rho</Label>
                     </ListBoxItem>
                 </ListBox>
