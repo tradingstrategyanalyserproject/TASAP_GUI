@@ -202,7 +202,8 @@
         </StackPanel>
 
         <Grid x:Name="GraphGrid" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="800" Margin="0,229,0,0" Grid.Row="2" Grid.ColumnSpan="3" >
-
+            <Wpf:CartesianChart x:Name="DataChart">
+            </Wpf:CartesianChart>
         </Grid>
         <Grid x:Name="ParamsGridLeft" HorizontalAlignment="Left" Height="230" Margin="80,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="300">
             <Grid.RowDefinitions>

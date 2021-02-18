@@ -9,18 +9,18 @@ namespace TASAP_COM
 {
     public class Greecs
     {
-        public Dictionary<Object, string> greecsdico;
+        public Dictionary<Object, Object> greecsdico;
 
         public Greecs()
         {
-            this.greecsdico = new Dictionary<object, string>();
+            this.greecsdico = new Dictionary<Object, Object>();
         }
 
         public void GreecsJson(dynamic dynamicObj)
         {
             foreach (var item in dynamicObj)
             {
-                greecsdico[item.Name] = (string) item.Value;
+                greecsdico[item.Name] = item.Value;
             }
         }
 

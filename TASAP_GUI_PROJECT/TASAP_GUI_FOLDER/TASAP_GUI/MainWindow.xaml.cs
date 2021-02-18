@@ -25,38 +25,7 @@ namespace TASAP_GUI
     {
         string optionType = "put";
         public List<RadioButton> rblist = new List<RadioButton>();
-
-        public partial class SeriesChart : UserControl
-        {
-            SeriesChart cruves;
-            String checkedOne;
-
-            public SeriesChart(List<RadioButton> rblist, Greecs gr, Grid graphgrid)
-            {
-                foreach (RadioButton check in rblist)
-                {
-                    if ((bool)check.IsChecked)
-                    {
-                        checkedOne = check.Name;
-                    }
-                }
-
-                CartesianChart mychart = new CartesianChart();
-                mychart.Series = new SeriesCollection
-                {
-                    new LineSeries
-                    {
-                        Title = "Series 1",
-                        Values = new ChartValues<double> { Convert.ToDouble(gr.greecsdico.Values.ElementAt(2)),Convert.ToDouble(gr.greecsdico.Values.ElementAt(1))}
-                    }
-
-                };
-
-                graphgrid.Children.Add(mychart);
-
-            }
-
-        }
+        Greecs answerGreecs;
 
         public MainWindow()
 
@@ -115,18 +84,70 @@ namespace TASAP_GUI
         {
             // When clicking on Launch button, we call the OptionRequest Class we builded in the TASAP COM Project
             Optionrequest optionrequest = new Optionrequest(optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
-            Greecs answerGreecs = optionrequest.Rfq_Handler();
-            //PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString();
+            answerGreecs = optionrequest.Rfq_Handler();
             PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString();
-            SeriesChart sch = new SeriesChart(rblist, answerGreecs, GraphGrid);
-            //SeriesCollection SeriesCollectionxml = sch.SeriesCollection;
+            BuildChart();
         }
+
+        private string GetCheckedParam()
+        {
+            foreach(RadioButton rb in rblist)
+            {
+                if ((bool)rb.IsChecked)
+                {
+                    return rb.Name;
+                }
+
+                else return null;
+            }
+            return null;
+
+        }
+
+        private void BuildChart()
+        {
+            //For some reason i had to clear Axis to have a clean result
+            DataChart.AxisX.Clear();
+            DataChart.AxisY.Clear();
+
+            DataChart.Series.Clear();
+
+            // Naming new Axis
+            DataChart.AxisX.Add(new LiveCharts.Wpf.Axis{
+                Title = GetCheckedParam(),
+            });
+            DataChart.AxisY.Add(new LiveCharts.Wpf.Axis {
+                Title = "Greec(s)",
+            }
+           );
+
+            SeriesCollection series = new SeriesCollection();
+            series.Add(new LineSeries() { Title = "FIST", Values = new ChartValues<double> { 2 , 3 , 4, 5}});
+            DataChart.Series = series;
+        }
+
+
+        private List<double> ConvertForChart(string grec)
+        {
+            List<double> values = new List<double>();
+            //SET A LOOP TO CHECK WANTED GREECS WHEN ADDED TO THE WINDOW SELECTOR
+            foreach(Object key in answerGreecs.greecsdico.Keys)
+            {
+                if(key.ToString() == grec)
+                {
+                    values.Add(Convert.ToDouble(answerGreecs.greecsdico[key]));
+                }
+            }
+            return values;
+        }
+
+
 
         private void OptionType_Checked(object sender, RoutedEventArgs e)
         {
             optionType = "call";
-        }
 
+        }
         private void OptionType_Unchecked(object sender, RoutedEventArgs e)
         {
             optionType = "put";
