@@ -2,6 +2,7 @@
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,15 +29,18 @@ namespace TASAP_GUI
         Greecs answerGreecs;
         String currentNameX;
         OptionRequest OptionRequest;
-
+        bool strike_already_checked = false;
+        bool stock_already_checked = false;
+        bool vol_already_checked = false;
+        bool logicalError = false;
 
         public MainWindow()
 
         {
             InitializeComponent();
-            rblist.Add(STPrb);
-            rblist.Add(STKrb);
-            rblist.Add(Volrb);
+            rblist.Add(Strike_Price);
+            rblist.Add(Stock_Price);
+            rblist.Add(Volatility);
         }
 
 
@@ -56,12 +60,22 @@ namespace TASAP_GUI
 
         }
 
+        private float stringToFloat(string val)
+        {
+            float res;
+            res = float.Parse(val, CultureInfo.InvariantCulture.NumberFormat);
+            return res;
+        }
+
         private void Launch_Click(object sender, RoutedEventArgs e)
         {
             // When clicking on Launch button, we call the OptionRequest Class we builded in the TASAP COM Project
             //OptionRequest OptionRequest = OptionRequestMaker.MakeOptionRequest(variable, min, max, optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
-            zeubi.UnselectAll();
+            logicalError = false;
+            yParam.IsEnabled = true;
+            yParam.UnselectAll();
             bool checkedval = false;
+
             foreach (RadioButton rb in rblist)
             {
                 if (rb.IsChecked == true)
@@ -69,17 +83,42 @@ namespace TASAP_GUI
                     checkedval = true;
                     switch (rb.Name)
                     {
-                        case "STPrb": // for the strike price
-                            OptionRequest = OptionRequestMaker.MakeOptionRequest("variable","strike", StrikePriceValmin.Text, StrikePriceValmax.Text, optionType, MaturityVal.Text,RfRateVal.Text, StockPriceVal.Text, VolatilityVal.Text);
-                            break;
-
-                        case "STKrb":
-                            OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "spot", StockPriceValmin.Text, StockPriceValmax.Text, optionType,  MaturityVal.Text, RfRateVal.Text, StrikePriceVal.Text, VolatilityVal.Text);
-                            break;
-
-                        case "Volrb":
-                            OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "sigma", VolatilityValmin.Text, VolatilityValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StockPriceVal.Text, StrikePriceVal.Text);
-                            break;
+                        case "Strike_Price": // for the strike price
+                            if (stringToFloat(StrikePriceValmin.Text) >= stringToFloat(StrikePriceValmax.Text))
+                            {
+                                MessageBox.Show("Min value can't be lower than the max value.");
+                                logicalError = true;
+                                break;
+                            }
+                            else
+                            {
+                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "strike", StrikePriceValmin.Text, StrikePriceValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StockPriceVal.Text, VolatilityVal.Text);
+                                break;
+                            }
+                        case "Stock_Price":
+                            if (stringToFloat(StockPriceValmin.Text) >= stringToFloat(StockPriceValmax.Text))
+                            {
+                                MessageBox.Show("Min value can't be lower than the max value.");
+                                logicalError = true;
+                                break;
+                            }
+                            else
+                            {
+                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "spot", StockPriceValmin.Text, StockPriceValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StrikePriceVal.Text, VolatilityVal.Text);
+                                break;
+                            }
+                        case "Volatility":
+                            if (stringToFloat(VolatilityValmin.Text) >= stringToFloat(VolatilityValmax.Text))
+                            {
+                                MessageBox.Show("Min value can't be lower than the max value.");
+                                logicalError = true;
+                                break;
+                            }
+                            else
+                            {
+                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "sigma", VolatilityValmin.Text, VolatilityValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StockPriceVal.Text, StrikePriceVal.Text);
+                                break;
+                            }
                     }
                 }
             }
@@ -89,11 +128,13 @@ namespace TASAP_GUI
                 OptionRequest = OptionRequestMaker.MakeOptionRequest(optionType, (StockPriceVal.Text), (StrikePriceVal.Text), (MaturityVal.Text), (RfRateVal.Text), (VolatilityVal.Text));
             }
 
-            answerGreecs = OptionRequest.Rfq_Handler(checkedval);
+            if(!logicalError){
+                answerGreecs = OptionRequest.Rfq_Handler(checkedval);
 
-            if (!checkedval) { PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString(); }
+                if (!checkedval) { PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString(); }
 
-            BuildChart();
+                BuildChart();
+            }
         }
 
         private void OptionType_Checked(object sender, RoutedEventArgs e)
@@ -129,16 +170,33 @@ namespace TASAP_GUI
         #endregion
 
         #region Radio button exclusion conditions
-        private void STPrb_Click(object sender, RoutedEventArgs e)
+        private void Strike_Price_CheckedChanged(object sender, EventArgs e)
         {
-            if ((bool)STPrb.IsChecked)
+            strike_already_checked = Strike_Price.IsChecked.Value;
+        }
+
+        private void Strike_Price_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (Strike_Price.IsChecked == true && !strike_already_checked)
+            {
+                strike_already_checked = true;
+
                 foreach (RadioButton rb in rblist)
                 {
-                    if (rb.Name != STPrb.Name)
+                    if (rb.Name != Strike_Price.Name)
                     {
                         rb.IsChecked = false;
                     }
                 }
+                
+            }
+            else
+            {
+                Strike_Price.IsChecked = false;
+                strike_already_checked = false;
+            }
+            
 
             StockPriceVal.IsEnabled = true;
             StockPriceValmin.IsEnabled = false;
@@ -154,16 +212,31 @@ namespace TASAP_GUI
 
         }
 
-        private void STKrb_Click(object sender, RoutedEventArgs e)
+
+        private void Stock_Price_CheckedChanged(object sender, EventArgs e)
         {
-            if ((bool)STKrb.IsChecked)
+            stock_already_checked = Stock_Price.IsChecked.Value;
+        }
+
+        private void Stock_Price_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (Stock_Price.IsChecked == true && !stock_already_checked)
+            {
+                stock_already_checked = true;
                 foreach (RadioButton rb in rblist)
                 {
-                    if (rb.Name != STKrb.Name)
+                    if (rb.Name != Stock_Price.Name)
                     {
                         rb.IsChecked = false;
                     }
                 }
+            }
+            else
+            {
+                Stock_Price.IsChecked = false;
+                stock_already_checked = false;
+            }
 
             StrikePriceVal.IsEnabled = true;
             StrikePriceValmin.IsEnabled = false;
@@ -179,16 +252,31 @@ namespace TASAP_GUI
 
         }
 
-        private void Volrb_Click(object sender, RoutedEventArgs e)
+
+        private void Volatility_CheckedChanged(object sender, EventArgs e)
         {
-            if ((bool)Volrb.IsChecked)
+            vol_already_checked = Volatility.IsChecked.Value;
+        }
+
+        private void Volatility_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (Volatility.IsChecked == true && !vol_already_checked)
+            {
+                vol_already_checked = true;
                 foreach (RadioButton rb in rblist)
                 {
-                    if (rb.Name != Volrb.Name)
+                    if (rb.Name != Volatility.Name)
                     {
                         rb.IsChecked = false;
                     }
                 }
+            }
+            else
+            {
+                Volatility.IsChecked = false;
+                vol_already_checked = false;
+            }
 
             StockPriceVal.IsEnabled = true;
             StockPriceValmin.IsEnabled = false;
