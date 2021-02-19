@@ -8,14 +8,15 @@ namespace TASAP_COM
 {
     public class OptionRequestMaker
     {
-        public static OptionRequest MakeOptionRequest(string type, int spot, int strike, int time, int rate, int vol)
+        public static OptionRequest MakeOptionRequest(string type, string spot, string strike, string time, string rate, string vol)
         {
             return new OptionRequest(type, spot, strike, time, rate, vol);
         }
 
-        public static OptionRequest MakeOptionRequest(int variable, int min, int max, string type, int strike, int spot, int time, int rate, int vol)
+        public static OptionRequest MakeOptionRequest(string variable, string varname, string min, string max, string type, string time, string rate, string a, string b)
         {
-            return new OptionRequest(variable, min, max, type, strike, spot, time, rate, vol);
+            return new OptionRequest(variable, varname, min, max, type, time, rate, a, b);
         }
+
     }
 }

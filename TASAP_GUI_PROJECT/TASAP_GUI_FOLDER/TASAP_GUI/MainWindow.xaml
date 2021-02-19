@@ -16,7 +16,7 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600" 
-        Width="800"
+        Width="968"
         ResizeMode="NoResize"
         Topmost="True"
         WindowStyle="None"
@@ -192,7 +192,7 @@
 
 
 
-        <StackPanel x:Name="Putorcall" Orientation="Horizontal" Margin="0,0,254,0" HorizontalAlignment="Right" Width="116">
+        <StackPanel x:Name="Putorcall" Orientation="Horizontal" Margin="0,4,317,53" HorizontalAlignment="Right" Width="116" Grid.RowSpan="2">
             <TextBlock x:Name="Put" IsEnabled="False" Margin="0,9,12,0"><Run Text="Put"/></TextBlock>
             <ToggleButton x:Name="OptionType"  Checked="OptionType_Checked" Unchecked="OptionType_Unchecked" 
             Style="{StaticResource MaterialDesignSwitchToggleButton}"
@@ -201,19 +201,25 @@
 
         </StackPanel>
 
-        <StackPanel x:Name="Result" Orientation="Horizontal" Margin="268.5,0,162,0" Grid.Row="1" >
+        <StackPanel x:Name="Result" Orientation="Horizontal" Margin="365,4,100,506" Grid.Row="1" Grid.RowSpan="2" >
             <Button x:Name="Launch" Click="Launch_Click" Width="120" Height="40 " 
                         Style="{StaticResource MaterialDesignRaisedButton}" Content="Launch"/>
             <Label Margin= "10,0,0,0" Foreground="White" VerticalAlignment="Center" Content="Result :"/>
-            <Label Margin="5,7,0,0" Foreground="White" x:Name="PayoffVal"/>
+            <Label Margin="5,18,0,0" Foreground="White" x:Name="PayoffVal"/>
 
         </StackPanel>
 
-        <Grid x:Name="GraphGrid" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="800" Margin="0,229,0,0" Grid.Row="2" Grid.ColumnSpan="3" >
-            <Wpf:CartesianChart x:Name="DataChart">
+        <Grid x:Name="GraphGrid" HorizontalAlignment="Left" Height="261" VerticalAlignment="Top" Width="958" Margin="0,239,0,0" Grid.Row="2" Grid.ColumnSpan="3" >
+            <Wpf:CartesianChart x:Name="DataChart" Margin="20,0,10,0">
+                <Wpf:CartesianChart.AxisY>
+                    <Wpf:Axis Title="Greecs" MinValue="0"></Wpf:Axis>
+                </Wpf:CartesianChart.AxisY>
+                <Wpf:CartesianChart.AxisX>
+                    <Wpf:Axis Title="Parameter" MinValue="0"></Wpf:Axis>
+                </Wpf:CartesianChart.AxisX>
             </Wpf:CartesianChart>
         </Grid>
-        <Grid x:Name="ParamsGridLeft" HorizontalAlignment="Left" Height="230" Margin="80,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="300">
+        <Grid x:Name="ParamsGridLeft" HorizontalAlignment="Left" Height="230" Margin="80,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="399">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -222,18 +228,18 @@
 
             <StackPanel x:Name="SP_StrikePrice" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="STPrb" Style="{StaticResource MaterialDesignTabRadioButton}" Click="STPrb_Click"  Content="Strike Price"/>
-                <TextBlock IsEnabled="True" x:Name="StrikePriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
-                <Label Margin="17,1,0,0">Min :</Label>
+                <TextBox IsEnabled="True" x:Name="StrikePriceVal"  Margin="5,5,0,0">50.0</TextBox>
+                <Label Margin="30,1,0,0">Min :</Label>
                 <TextBox IsEnabled="False" x:Name="StrikePriceValmin"  Margin="8,3,0,0">0</TextBox>
-                <Label Margin="18,1,0,0">Max :</Label>
+                <Label Margin="70,1,0,0">Max :</Label>
                 <TextBox IsEnabled="False" x:Name="StrikePriceValmax"  Margin="2,3,0,0">0</TextBox>
             </StackPanel>
             <StackPanel x:Name="SP_StockPrice" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="STKrb" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="STKrb_Click" Content="Stock Price"/>
-                <TextBlock IsEnabled="False" x:Name="StockPriceVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
-                <Label Margin="17,1,0,0">Min :</Label>
+                <TextBox IsEnabled="True" x:Name="StockPriceVal"  Margin="5,5,0,0">50.0</TextBox>
+                <Label Margin="30,1,0,0">Min :</Label>
                 <TextBox IsEnabled="False" x:Name="StockPriceValmin"  Margin="8,3,0,0">0</TextBox>
-                <Label Margin="18,1,0,0">Max :</Label>
+                <Label Margin="70,1,0,0">Max :</Label>
                 <TextBox IsEnabled="False" x:Name="StockPriceValmax"  Margin="2,3,0,0">0</TextBox>
 
             </StackPanel>
@@ -252,11 +258,11 @@
                     <ComboBoxItem>20 years</ComboBoxItem>
                     <ComboBoxItem>30 years</ComboBoxItem>
                 </ComboBox>
-                <TextBlock IsEnabled="False" x:Name="MaturityVal"  Margin="16,5,0,0"><Run Text="6"/></TextBlock>
+                <TextBlock IsEnabled="False" x:Name="MaturityVal"  Margin="50,5,0,0">6.0</TextBlock>
 
             </StackPanel>
         </Grid>
-        <Grid x:Name="ParamsGridRight" HorizontalAlignment="Left" Height="230" Margin="422,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="350" Grid.ColumnSpan="2">
+        <Grid x:Name="ParamsGridRight" HorizontalAlignment="Left" Height="230" Margin="522,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="410" Grid.ColumnSpan="2">
             <Grid.Resources>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="Margin" Value="0,0,8,0"/>
@@ -270,20 +276,20 @@
 
             <StackPanel x:Name="SP_RiskFreeRate" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton IsEnabled="False"  Style="{StaticResource MaterialDesignTabRadioButton}" Content="Risk Free Rate" Foreground="Black"/>
-                <TextBox IsEnabled="True" x:Name="RfRateVal"  Margin="5,5,0,0">0</TextBox>
+                <TextBox IsEnabled="True" x:Name="RfRateVal"  Margin="5,5,0,0">0.0</TextBox>
             </StackPanel>
 
             <StackPanel x:Name="SP_Volatitlity" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="Volrb" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="Volrb_Click" Content="Volatility"/>
-                <TextBlock IsEnabled="False" x:Name="VolatilityVal"  Margin="5,5,0,0"><Run Text="50"/></TextBlock>
-                <Label Margin="17,1,0,0">Min :</Label>
+                <TextBox IsEnabled="True" x:Name="VolatilityVal"  Margin="5,5,0,0">50.0</TextBox>
+                <Label Margin="30,1,0,0">Min :</Label>
                 <TextBox IsEnabled="False" x:Name="VolatilityValmin"  Margin="8,3,0,0">0</TextBox>
-                <Label Margin="18,1,0,0">Max :</Label>
+                <Label Margin="40,1,0,0">Max :</Label>
                 <TextBox IsEnabled="False" x:Name="VolatilityValmax"  Margin="2,3,0,0">0</TextBox>
             </StackPanel>
 
             <StackPanel x:Name="GreecsPanel" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
-                <ListBox SelectionMode="Extended" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" Background="{x:Null}">
+                <ListBox Name="zeubi" SelectionMode="Extended" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" Background="{x:Null}">
                     <ListBox.ToolTip>
                         <StackPanel>
                             <TextBlock
@@ -308,6 +314,9 @@
                     </ListBoxItem>
                     <ListBoxItem x:Name="RhoCheck" Unselected="RhoCheck_Unselected" Selected="RhoCheck_Selected">
                         <Label>Rho</Label>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="Payoff" Unselected="Payoff_Unselected" Selected="Payoff_Selected">
+                        <Label>Payoff</Label>
                     </ListBoxItem>
                 </ListBox>
             </StackPanel>

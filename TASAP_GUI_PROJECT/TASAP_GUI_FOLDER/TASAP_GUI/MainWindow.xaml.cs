@@ -27,6 +27,8 @@ namespace TASAP_GUI
         public List<RadioButton> rblist = new List<RadioButton>();
         Greecs answerGreecs;
         String currentNameX;
+        OptionRequest OptionRequest;
+
 
         public MainWindow()
 
@@ -58,11 +60,40 @@ namespace TASAP_GUI
         {
             // When clicking on Launch button, we call the OptionRequest Class we builded in the TASAP COM Project
             //OptionRequest OptionRequest = OptionRequestMaker.MakeOptionRequest(variable, min, max, optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
-            //OptionRequest OptionRequest = OptionRequestMaker.MakeOptionRequest(optionType, (int)StockPriceSlider.Value, (int)StrikePriceSlider.Value, (int)MaturitySlider.Value, (int)RfRateSlider.Value, (int)VolatilitySlider.Value);
-            //answerGreecs = OptionRequest.Rfq_Handler();
-            PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString();
+            zeubi.UnselectAll();
+            bool checkedval = false;
+            foreach (RadioButton rb in rblist)
+            {
+                if (rb.IsChecked == true)
+                {
+                    checkedval = true;
+                    switch (rb.Name)
+                    {
+                        case "STPrb": // for the strike price
+                            OptionRequest = OptionRequestMaker.MakeOptionRequest("variable","strike", StrikePriceValmin.Text, StrikePriceValmax.Text, optionType, MaturityVal.Text,RfRateVal.Text, StockPriceVal.Text, VolatilityVal.Text);
+                            break;
+
+                        case "STKrb":
+                            OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "spot", StockPriceValmin.Text, StockPriceValmax.Text, optionType,  MaturityVal.Text, RfRateVal.Text, StrikePriceVal.Text, VolatilityVal.Text);
+                            break;
+
+                        case "Volrb":
+                            OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "sigma", VolatilityValmin.Text, VolatilityValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StockPriceVal.Text, StrikePriceVal.Text);
+                            break;
+                    }
+                }
+            }
+
+            if (!checkedval)
+            {
+                OptionRequest = OptionRequestMaker.MakeOptionRequest(optionType, (StockPriceVal.Text), (StrikePriceVal.Text), (MaturityVal.Text), (RfRateVal.Text), (VolatilityVal.Text));
+            }
+
+            answerGreecs = OptionRequest.Rfq_Handler(checkedval);
+
+            if (!checkedval) { PayoffVal.Content = answerGreecs.greecsdico.Values.ElementAt(2).ToString(); }
+
             BuildChart();
-            AddChartSerie("gamma");
         }
 
         private void OptionType_Checked(object sender, RoutedEventArgs e)
@@ -76,6 +107,28 @@ namespace TASAP_GUI
 
         }
 
+
+
+        private void MaturityCb_Selected(object sender, EventArgs e)
+        {
+            string maturity = MaturityCb.Text;
+            Console.WriteLine("THE SELECTED ITEM IS:" + maturity);
+            if (maturity == "1 month") { MaturityVal.Text = "0.083"; }
+            else if (maturity == "3 months") { MaturityVal.Text = "0.25"; }
+            else if (maturity == "6 months") { MaturityVal.Text = "0.5"; }
+            else if (maturity == "1 year") { MaturityVal.Text = "1.0"; }
+            else if (maturity == "2 years") { MaturityVal.Text = "2.0"; }
+            else if (maturity == "5 years") { MaturityVal.Text = "5.0"; }
+            else if (maturity == "10 years") { MaturityVal.Text = "10.0"; }
+            else if (maturity == "12 years") { MaturityVal.Text = "12.0"; }
+            else if (maturity == "15 years") { MaturityVal.Text = "15.0"; }
+            else if (maturity == "20 years") { MaturityVal.Text = "20.0"; }
+            else if (maturity == "30 years") { MaturityVal.Text = "30.0"; }
+        }
+
+        #endregion
+
+        #region Radio button exclusion conditions
         private void STPrb_Click(object sender, RoutedEventArgs e)
         {
             if ((bool)STPrb.IsChecked)
@@ -86,12 +139,16 @@ namespace TASAP_GUI
                         rb.IsChecked = false;
                     }
                 }
+
+            StockPriceVal.IsEnabled = true;
             StockPriceValmin.IsEnabled = false;
             StockPriceValmax.IsEnabled = false;
 
+            VolatilityVal.IsEnabled = true;
             VolatilityValmin.IsEnabled = false;
             VolatilityValmax.IsEnabled = false;
 
+            StrikePriceVal.IsEnabled = false;
             StrikePriceValmin.IsEnabled = true;
             StrikePriceValmax.IsEnabled = true;
 
@@ -107,12 +164,16 @@ namespace TASAP_GUI
                         rb.IsChecked = false;
                     }
                 }
+
+            StrikePriceVal.IsEnabled = true;
             StrikePriceValmin.IsEnabled = false;
             StrikePriceValmax.IsEnabled = false;
 
+            VolatilityVal.IsEnabled = true;
             VolatilityValmin.IsEnabled = false;
             VolatilityValmax.IsEnabled = false;
 
+            StockPriceVal.IsEnabled = false;
             StockPriceValmin.IsEnabled = true;
             StockPriceValmax.IsEnabled = true;
 
@@ -128,51 +189,22 @@ namespace TASAP_GUI
                         rb.IsChecked = false;
                     }
                 }
+
+            StockPriceVal.IsEnabled = true;
             StockPriceValmin.IsEnabled = false;
             StockPriceValmax.IsEnabled = false;
 
+            StrikePriceVal.IsEnabled = true;
             StrikePriceValmin.IsEnabled = false;
             StrikePriceValmax.IsEnabled = false;
 
+            VolatilityVal.IsEnabled = false;
             VolatilityValmin.IsEnabled = true;
             VolatilityValmax.IsEnabled = true;
         }
-
-        private void MaturityCb_Selected(object sender, EventArgs e)
-        {
-            string maturity = MaturityCb.Text;
-            Console.WriteLine("THE SELECTED ITEM IS:" + maturity);
-            if (maturity == "1 month") { MaturityVal.Text = "0,083"; }
-            else if (maturity == "3 months") { MaturityVal.Text = "0,25"; }
-            else if (maturity == "6 months") { MaturityVal.Text = "0,5"; }
-            else if (maturity == "1 year") { MaturityVal.Text = "1"; }
-            else if (maturity == "2 years") { MaturityVal.Text = "2"; }
-            else if (maturity == "5 years") { MaturityVal.Text = "5"; }
-            else if (maturity == "10 years") { MaturityVal.Text = "10"; }
-            else if (maturity == "12 years") { MaturityVal.Text = "12"; }
-            else if (maturity == "15 years") { MaturityVal.Text = "15"; }
-            else if (maturity == "20 years") { MaturityVal.Text = "20"; }
-            else if (maturity == "30 years") { MaturityVal.Text = "30"; }
-        }
         #endregion
 
-
         #region Chart functions
-
-        private string GetCheckedParam()
-        {
-            foreach (RadioButton rb in rblist)
-            {
-                if (rb.IsChecked == true)
-                {
-                    //Console.WriteLine(rb.Name + "zeifhjgzeyufhé" + (bool)rb.IsChecked);
-                    return rb.Name;
-                }
-
-                else return null;
-            }
-            return null;
-        }
 
         private void BuildChart()
         {
@@ -194,6 +226,7 @@ namespace TASAP_GUI
             DataChart.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = currentNameX,
+                MinValue = 0,
             });
 
             DataChart.AxisY.Add(new LiveCharts.Wpf.Axis
@@ -201,9 +234,7 @@ namespace TASAP_GUI
                 Title = "Greec(s)",
             }
            );
-
             SeriesCollection series = new SeriesCollection();
-            series.Add(new LineSeries() { Title = "FIST", Values = new ChartValues<double> { 2, 3, 4, 5 } });
             DataChart.Series = series;
         
         }
@@ -214,7 +245,7 @@ namespace TASAP_GUI
             List<double> values = new List<double>();
             foreach (Object key in answerGreecs.greecsdico.Keys)
             {
-                if (key.ToString() == grec+": ")
+                if (key.ToString().Contains(grec))
                 {
                     values.Add(Convert.ToDouble(answerGreecs.greecsdico[key]));
                 }
@@ -224,7 +255,7 @@ namespace TASAP_GUI
 
         private void AddChartSerie(string grec)
         {
-            DataChart.Series.Add(new LineSeries() { Title = grec, Values = new ChartValues<double>(ConvertForChart(grec))});
+            DataChart.Series.Add(new LineSeries() { Title = grec, Values = new ChartValues<double>(ConvertForChart(grec)),PointGeometrySize = 2 });
             Console.WriteLine("Added to the chart" + ConvertForChart(grec));
         }
 
@@ -269,7 +300,14 @@ namespace TASAP_GUI
             AddChartSerie("rho");
         }
 
+        private void Payoff_Selected(object sender, RoutedEventArgs e)
+        {
+            AddChartSerie("payoff");
+        }
+
         #endregion
+
+        #region Greec unselection
 
         private void DeltaCheck_Unselected(object sender, RoutedEventArgs e)
         {
@@ -295,5 +333,13 @@ namespace TASAP_GUI
         {
             RemoveChartSeries("rho");
         }
+
+        private void Payoff_Unselected(object sender, RoutedEventArgs e)
+        {
+            RemoveChartSeries("payoff");
+
+        }
+
+        #endregion
     }
 }

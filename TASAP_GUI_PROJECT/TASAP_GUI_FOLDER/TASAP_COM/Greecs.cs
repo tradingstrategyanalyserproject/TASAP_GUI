@@ -16,11 +16,27 @@ namespace TASAP_COM
             this.greecsdico = new Dictionary<Object, Object>();
         }
 
-        public void GreecsJson(dynamic dynamicObj)
+        public void GreecsJson(dynamic dynamicObj, bool mutiple)
         {
-            foreach (var item in dynamicObj)
+            if (mutiple)
             {
-                greecsdico[item.Name] = item.Value;
+                for(int i = 0; i < dynamicObj.Count; i++)
+                {
+                    foreach (var item in dynamicObj[i])
+                    {
+                        Console.WriteLine(item.ToString());
+                        greecsdico[item.Name+i.ToString()] = item.Value;
+                    }
+                }
+                
+            }
+            else
+            {
+                foreach (var item in dynamicObj)
+                {
+                    Console.WriteLine(item.ToString());
+                    greecsdico[item.Name] = item.Value;
+                }
             }
         }
 

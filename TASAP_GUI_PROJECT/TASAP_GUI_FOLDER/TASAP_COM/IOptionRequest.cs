@@ -11,17 +11,17 @@ namespace TASAP_COM
    
         String Type { get; set; }
 
-        int Variable { get; set; }
+        double Variable { get; set; }
 
-        int Spot { get; set; }
+        double Spot { get; set; }
 
-        int Strike { get; set; }
+        double Strike { get; set; }
 
-        int Time { get; set; }
+        double Time { get; set; }
 
-        int Rate { get; set; }
+        double Rate { get; set; }
 
-        int Vol { get; set; }
+        double Vol { get; set; }
 
     }
 }
