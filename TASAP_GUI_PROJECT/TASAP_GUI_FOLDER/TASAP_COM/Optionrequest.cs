@@ -32,18 +32,24 @@ namespace TASAP_COM
             this.variable = "price";
             list4request.Add(variable);
             this.type = type;
-            list4request.Add(type);
-            this.spot = spot;
-            list4request.Add(spot);
-            this.strike = strike;
-            list4request.Add(strike);
+            list4request.Add(this.type);
+            this.spot = CheckifDouble(spot);
+            list4request.Add(this.spot);
+            this.strike = CheckifDouble(strike);
+            list4request.Add(this.strike);
             this.time = time;
-            list4request.Add(time);
-            this.rate = rate;
-            list4request.Add(rate);
-            this.vol = vol;
-            list4request.Add(vol);
+            list4request.Add(this.time);
+            this.rate = CheckifDouble(rate);
+            list4request.Add(this.rate);
+            this.vol = CheckifDouble(vol);
+            list4request.Add(this.vol);
             buildRequest();
+        }
+
+        public string CheckifDouble(string param)
+        {
+            // Console.WriteLine("The following paramters need to be corrected :" + (param.Contains(".") ? param : param + ".0"));
+            return (param.Contains(".") ? param : param + ".0");
         }
 
         public OptionRequest(string variable, string varname, string min, string max, string type, string time, string rate, string a, string b)
@@ -53,20 +59,20 @@ namespace TASAP_COM
             list4request.Add(variable);
             this.variablename = varname;
             list4request.Add(variablename);
-            this.min = min;
-            list4request.Add(min);
-            this.max = max;
-            list4request.Add(max);
+            this.min = CheckifDouble(min);
+            list4request.Add(this.min);
+            this.max = CheckifDouble(max);
+            list4request.Add(this.max);
             this.type = type;
             list4request.Add(type);
             this.time = time;
             list4request.Add(time);
-            this.rate = rate;
-            list4request.Add(rate);
-            this.a = a;
-            list4request.Add(a);
-            this.b = b;
-            list4request.Add(b);
+            this.rate = CheckifDouble(rate);
+            list4request.Add(this.rate);
+            this.a = CheckifDouble(a);
+            list4request.Add(this.a);
+            this.b = CheckifDouble(b);
+            list4request.Add(this.b);
             buildRequest();
         }
 

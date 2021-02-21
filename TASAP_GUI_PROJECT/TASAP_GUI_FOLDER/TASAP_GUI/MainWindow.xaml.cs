@@ -43,7 +43,6 @@ namespace TASAP_GUI
             rblist.Add(Volatility);
         }
 
-
         #region Components actions 
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
@@ -361,7 +360,7 @@ namespace TASAP_GUI
 
         #endregion
 
-        #region Greec selection
+        #region Greecs selection
 
         private void DeltaCheck_Selected(object sender, RoutedEventArgs e)
         {
