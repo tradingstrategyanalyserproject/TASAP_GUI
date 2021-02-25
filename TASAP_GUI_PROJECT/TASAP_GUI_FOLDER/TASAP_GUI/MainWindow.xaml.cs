@@ -83,7 +83,7 @@ namespace TASAP_GUI
                     switch (rb.Name)
                     {
                         case "Strike_Price": // for the strike price
-                            if (stringToFloat(StrikePriceValmin.Text) >= stringToFloat(StrikePriceValmax.Text))
+                            if (stringToFloat(Strike_PriceValmin.Text) >= stringToFloat(Strike_PriceValmax.Text))
                             {
                                 MessageBox.Show("Min value can't be lower than the max value.");
                                 logicalError = true;
@@ -91,11 +91,11 @@ namespace TASAP_GUI
                             }
                             else
                             {
-                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "strike", StrikePriceValmin.Text, StrikePriceValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StockPriceVal.Text, VolatilityVal.Text);
+                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "strike", Strike_PriceValmin.Text, Strike_PriceValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StockPriceVal.Text, VolatilityVal.Text);
                                 break;
                             }
                         case "Stock_Price":
-                            if (stringToFloat(StockPriceValmin.Text) >= stringToFloat(StockPriceValmax.Text))
+                            if (stringToFloat(Stock_PriceValmin.Text) >= stringToFloat(Stock_PriceValmax.Text))
                             {
                                 MessageBox.Show("Min value can't be lower than the max value.");
                                 logicalError = true;
@@ -103,7 +103,7 @@ namespace TASAP_GUI
                             }
                             else
                             {
-                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "spot", StockPriceValmin.Text, StockPriceValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StrikePriceVal.Text, VolatilityVal.Text);
+                                OptionRequest = OptionRequestMaker.MakeOptionRequest("variable", "spot", Stock_PriceValmin.Text, Stock_PriceValmax.Text, optionType, MaturityVal.Text, RfRateVal.Text, StrikePriceVal.Text, VolatilityVal.Text);
                                 break;
                             }
                         case "Volatility":
@@ -198,16 +198,16 @@ namespace TASAP_GUI
             
 
             StockPriceVal.IsEnabled = true;
-            StockPriceValmin.IsEnabled = false;
-            StockPriceValmax.IsEnabled = false;
+            Stock_PriceValmin.IsEnabled = false;
+            Stock_PriceValmax.IsEnabled = false;
 
             VolatilityVal.IsEnabled = true;
             VolatilityValmin.IsEnabled = false;
             VolatilityValmax.IsEnabled = false;
 
             StrikePriceVal.IsEnabled = false;
-            StrikePriceValmin.IsEnabled = true;
-            StrikePriceValmax.IsEnabled = true;
+            Strike_PriceValmin.IsEnabled = true;
+            Strike_PriceValmax.IsEnabled = true;
 
         }
 
@@ -238,16 +238,16 @@ namespace TASAP_GUI
             }
 
             StrikePriceVal.IsEnabled = true;
-            StrikePriceValmin.IsEnabled = false;
-            StrikePriceValmax.IsEnabled = false;
+            Strike_PriceValmin.IsEnabled = false;
+            Strike_PriceValmax.IsEnabled = false;
 
             VolatilityVal.IsEnabled = true;
             VolatilityValmin.IsEnabled = false;
             VolatilityValmax.IsEnabled = false;
 
             StockPriceVal.IsEnabled = false;
-            StockPriceValmin.IsEnabled = true;
-            StockPriceValmax.IsEnabled = true;
+            Stock_PriceValmin.IsEnabled = true;
+            Stock_PriceValmax.IsEnabled = true;
 
         }
 
@@ -278,12 +278,12 @@ namespace TASAP_GUI
             }
 
             StockPriceVal.IsEnabled = true;
-            StockPriceValmin.IsEnabled = false;
-            StockPriceValmax.IsEnabled = false;
+            Stock_PriceValmin.IsEnabled = false;
+            Stock_PriceValmax.IsEnabled = false;
 
             StrikePriceVal.IsEnabled = true;
-            StrikePriceValmin.IsEnabled = false;
-            StrikePriceValmax.IsEnabled = false;
+            Strike_PriceValmin.IsEnabled = false;
+            Strike_PriceValmax.IsEnabled = false;
 
             VolatilityVal.IsEnabled = false;
             VolatilityValmin.IsEnabled = true;
@@ -296,24 +296,36 @@ namespace TASAP_GUI
         private void BuildChart()
         {
             //For some reason i had to clear Axis to have a clean result
+            double min = 0.0, max = 100.0;
+            bool varBool = false;
             DataChart.AxisX.Clear();
             DataChart.AxisY.Clear();
 
-            DataChart.Series.Clear();
+            DataChart.Series.Clear(); 
 
             foreach (RadioButton rb in rblist)
             {
                 if (rb.IsChecked == true)
                 {
+                    varBool = true;
                     currentNameX = rb.Name;
                 }
+            }
+
+            if (varBool)
+            {
+                TextBox mint = this.FindName(currentNameX + "Valmin") as TextBox;
+                TextBox maxt = this.FindName(currentNameX + "Valmax") as TextBox;
+                min = Convert.ToDouble(mint.Text);
+                max = Convert.ToDouble(maxt.Text);
             }
 
             // Naming new Axis
             DataChart.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = currentNameX,
-                MinValue = 0,
+                MinValue = min,
+                MaxValue = max
             });
 
             DataChart.AxisY.Add(new LiveCharts.Wpf.Axis

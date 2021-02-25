@@ -165,7 +165,7 @@
 
     </Window.Resources>
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+    <Grid x:Name="GUI_int" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -232,17 +232,17 @@
                 <RadioButton Name="Strike_Price" Style="{StaticResource MaterialDesignTabRadioButton}" Click="Strike_Price_Click"  Content="Strike Price"/>
                 <TextBox IsEnabled="True" x:Name="StrikePriceVal"  Margin="5,5,0,0">50.0</TextBox>
                 <Label Margin="30,1,0,0">Min :</Label>
-                <TextBox IsEnabled="False" x:Name="StrikePriceValmin"  Margin="8,3,0,0">0</TextBox>
+                <TextBox IsEnabled="False" x:Name="Strike_PriceValmin"  Margin="8,3,0,0">0</TextBox>
                 <Label Margin="70,1,0,0">Max :</Label>
-                <TextBox IsEnabled="False" x:Name="StrikePriceValmax"  Margin="2,3,0,0">0</TextBox>
+                <TextBox IsEnabled="False" x:Name="Strike_PriceValmax"  Margin="2,3,0,0">0</TextBox>
             </StackPanel>
             <StackPanel x:Name="SP_StockPrice" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
                 <RadioButton Name="Stock_Price" Style="{StaticResource MaterialDesignTabRadioButton}"  Click="Stock_Price_Click" Content="Stock Price"/>
                 <TextBox IsEnabled="True" x:Name="StockPriceVal"  Margin="5,5,0,0">50.0</TextBox>
                 <Label Margin="30,1,0,0">Min :</Label>
-                <TextBox IsEnabled="False" x:Name="StockPriceValmin"  Margin="8,3,0,0">0</TextBox>
+                <TextBox IsEnabled="False" x:Name="Stock_PriceValmin"  Margin="8,3,0,0">0</TextBox>
                 <Label Margin="70,1,0,0">Max :</Label>
-                <TextBox IsEnabled="False" x:Name="StockPriceValmax"  Margin="2,3,0,0">0</TextBox>
+                <TextBox IsEnabled="False" x:Name="Stock_PriceValmax"  Margin="2,3,0,0">0</TextBox>
 
             </StackPanel>
             <StackPanel x:Name="SP_TimeToMaturity" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
